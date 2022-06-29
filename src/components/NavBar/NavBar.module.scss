@@ -1,0 +1,32 @@
+@import '../../styles/settings.scss';
+
+.bar{
+  position: relative;
+  background-color: darken($color-dark, 3%);
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  height: 45px;
+}
+
+.icon {
+  position: relative;
+  margin-left: 15px;
+  font-size: 30px;
+  top: 7.5px;
+}
+.navButtons{
+  list-style: none;
+  display: inline-flex;
+  margin-inline: 15px;
+  margin-block: auto;
+  li{
+    padding-inline: 7.5px;
+    font-size: 18px;
+  }
+}
+
+a{
+  text-decoration: none;
+  color: $color-light;
+}
