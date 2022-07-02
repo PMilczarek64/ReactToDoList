@@ -30,3 +30,9 @@ a{
   text-decoration: none;
   color: $color-light;
 }
+
+.linkActive {
+  background-image: linear-gradient(60deg, #84bdff, #715edf);
+  background-clip: text;
+  color: transparent;
+}
