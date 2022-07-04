@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import styles from './FavoriteButton.module.scss';
 import clsx from "clsx";
-import { updateFavorite } from "../../redux/store";
+import { updateFavorite } from "../../redux/cardsRedux";
 import { useDispatch } from "react-redux";
 
 const FavoriteButton = ({id, ...props}) => {
