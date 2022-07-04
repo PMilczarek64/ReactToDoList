@@ -1,7 +1,11 @@
-import { createStore } from 'redux';
-import shortid from 'shortid';
+import { createStore, combineReducers } from 'redux';
 import { strContains } from '../utils/strContains';
 import initialState from './initialState';
+import listsReducer from './listsRedux';
+import columnsReducer from './columnsRedux';
+import cardsReducer from './cardsRedux';
+import searchStringReducer from './searchStringRedux';
+
 
 export const getFilteredCards = ({ cards, searchString }, columnId) => cards
   .filter(card => card.columnId === columnId && strContains(card.title, searchString.searchKey));
@@ -28,7 +32,17 @@ export const updateSearchstring = payload => ({ type: 'UPDATE_SEARCHSTRING', pay
 
 export const updateFavorite = payload => ({ type: 'UPDATE_FAVORITE', payload });
 
-const reducer = (state, action) => {
+
+const subreducers = {
+  lists: listsReducer,
+  columns: columnsReducer,
+  cards: cardsReducer,
+  searchString: searchStringReducer
+}
+
+const reducer = combineReducers(subreducers);
+
+/*const reducer = (state, action) => {
   switch (action.type) {
     case 'ADD_COLUMN':
       return { ...state, columns: [...state.columns, { id: shortid(), listId: action.payload.listId, ...action.payload }] };
@@ -43,7 +57,7 @@ const reducer = (state, action) => {
     default:
       return state;
   };
-};
+}; */
 
 const store = createStore(
   reducer,
