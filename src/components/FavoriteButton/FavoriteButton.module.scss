@@ -1,18 +1,15 @@
-button {
-  border-style: none;
-  background-color: transparent;
-}
-
-button:hover {
+.star:hover {
   i {
     color: rgb(255, 208, 0);
   }
 }
 
-.fa {
+.star {
   color:rgba(255, 213, 0, 0.178);
   font-size: 18px;
   cursor: pointer;
+  border-style: none;
+  background-color: transparent;
 }
 
 .isFavorite {

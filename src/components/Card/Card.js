@@ -1,9 +1,16 @@
 import styles from './Card.module.scss';
 import FavoriteButton from '../FavoriteButton/FavoriteButton';
+import RemoveButton from '../RemoveButton/RemoveButton';
 
-const Card = ({id , ...props}) => {
-  return(
-    <li className={styles.card}>{props.title}<FavoriteButton id={id} /></li>
+const Card = ({ id, title}) => {
+  return (
+    <li className={styles.card}>
+      {title}
+      <div className='buttonsWrapper'>
+        <FavoriteButton id={id} />
+        <RemoveButton id={id} />
+      </div>
+    </li>
   );
 };
 

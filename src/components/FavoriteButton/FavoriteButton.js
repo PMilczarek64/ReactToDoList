@@ -21,7 +21,7 @@ const FavoriteButton = ({id, ...props}) => {
   };
 
   return (
-    <button className={clsx(styles.fa, isFavorite && styles.isFavorite)} onClick={() => handleClick()}><i className="fa fa-star"></i></button>
+    <button className={clsx(styles.star, isFavorite && styles.isFavorite)} onClick={() => handleClick()}><i className="fa fa-star"></i></button>
   )
 }
 
